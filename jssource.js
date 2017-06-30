@@ -1,4 +1,4 @@
-var sched = later.parse.recur().on(6).dayOfWeek();
+var sched = later.parse.recur().on(6).dayOfWeek().on('16:00:00').time(); //This is one hour out becuase UTC
 
 var occurrences = later.schedule(sched).next();
 
@@ -53,10 +53,10 @@ window.onload = function() {
     sOrNah(minutes, "min");
     sOrNah(seconds, "second");
   }
+  var timer = window.setInterval(function(){showRemaining()}, 1000);//Update timer once a second
 
 
   showRemaining()
-  window.setInterval(function(){showRemaining()}, 1000);//Update timer once a second
 
 
   $("#coin").click(function() {
