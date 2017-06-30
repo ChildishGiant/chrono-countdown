@@ -17,7 +17,7 @@ var dateNumber = now.getUTCDate();// ditto
 function sOrNah(input, unit){
   if (input == 1){
     document.getElementById("time").innerHTML += "1 "+unit+" ";
-  } else if (input > 1) {
+  } else {
     document.getElementById("time").innerHTML += input + " "+unit+"s ";
   }
 }
@@ -53,6 +53,7 @@ window.onload = function() {
     sOrNah(minutes, "min");
     sOrNah(seconds, "second");
   }
+
   var timer = window.setInterval(function(){showRemaining()}, 1000);//Update timer once a second
 
 
