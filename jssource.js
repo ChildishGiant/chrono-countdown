@@ -1,18 +1,13 @@
-var sched = later.parse.recur().on(6).dayOfWeek().on('16:00:00').time(); //This is one hour out becuase UTC
-
-var occurrences = later.schedule(sched).next();
 
 var now = new Date(); //constant
-var testDay = new Date();
 
+var ref = new Date(1501196400000); // A day that had games added on it
+var testDay = ref;
 
-
-var dayNumber = now.getUTCDay(); //Made a var for easy faking for debugging.
-var dateNumber = now.getUTCDate();// ditto
-
-//Faking tommorow
-// dayNumber = now.getUTCDay()+1;
-// dateNumber = now.getUTCDate()+1;
+while (testDay < now){
+  testDay = testDay.setDate(testDay.getDate() + 14)
+}
+testDay.setHours(16);
 
 function sOrNah(input, unit){
   if (input == 1){
@@ -33,7 +28,7 @@ window.onload = function() {
 
   function showRemaining() {
     var now = new Date();
-    var distance = occurrences - now;
+    var distance = testDay - now;
     if (distance < 0) {
 
       clearInterval(timer);
@@ -60,9 +55,4 @@ window.onload = function() {
   showRemaining()
 
 
-  $("#coin").click(function() {
-    $(this).addClass( "anim" ).one("webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend", function(){
-        $(this).removeClass( "anim" );
-    });
-  });
 };
