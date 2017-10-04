@@ -19,7 +19,7 @@ function showRemaining() {
   var _hour = _minute * 60;
   var _day = _hour * 24;
 
-  var now = new Date();
+  var now = new Date().getTime();
   var distance = testDay - now;
   if (distance < 0) {
 
@@ -47,7 +47,6 @@ window.onload = function() {
     testDay = new Date(testDay.setDate(testDay.getDate() + 14)) //add 2 weeks
   }
 
-  testDay.setHours(16);
 
 
   var timer = window.setInterval(function(){showRemaining()}, 1000);//Update timer once a second
