@@ -1,6 +1,6 @@
 var now = new Date(); //constant
 
-var ref = new Date(1501196400000); // A day that had games added on it
+var ref = new Date("Fri Sept 22 2017 17:00:00 GMT+0100 (GMT Daylight Time)"); // A day that had games added on it
 var testDay = ref;
 
 
@@ -45,7 +45,6 @@ window.onload = function() {
 
   while (testDay < now){
     testDay = new Date(testDay.setDate(testDay.getDate() + 14)) //add 2 weeks
-    console.log(testDay);
   }
 
   testDay.setHours(16);
