@@ -7,9 +7,9 @@ var testDay = ref;
 
 function sOrNah(input, unit){
   if (input == 1){
-    document.getElementById("time").innerHTML += "1 "+unit+" ";
+    document.getElementById("dusty").innerHTML += "1 "+unit+" ";
   } else {
-    document.getElementById("time").innerHTML += input + " "+unit+"s ";
+    document.getElementById("dusty").innerHTML += input + " "+unit+"s ";
   }
 }
 
@@ -24,7 +24,7 @@ function showRemaining() {
   if (distance < 0) {
 
     clearInterval(timer);
-    document.getElementById("time").innerHTML = "EXPIRED!";
+    document.getElementById("dusty").innerHTML = "EXPIRED!";
 
     return;
   }
@@ -34,7 +34,7 @@ function showRemaining() {
   var minutes = Math.floor((distance % _hour) / _minute);
   var seconds = Math.floor((distance % _minute) / _second);
 
-  document.getElementById("time").innerHTML = "";
+  document.getElementById("dusty").innerHTML = "";
   sOrNah(days,"day");
   sOrNah(hours,"hour");
   sOrNah(minutes, "min");
@@ -46,8 +46,6 @@ window.onload = function() {
   while (testDay < now){
     testDay = new Date(testDay.setDate(testDay.getDate() + 14)) //add 2 weeks
   }
-
-
 
   var timer = window.setInterval(function(){showRemaining()}, 1000);//Update timer once a second
 
