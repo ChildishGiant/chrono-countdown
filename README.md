@@ -1,2 +1,1 @@
-# chrono-countdown
-Apparently I do this now
+# Unofficial Chrono Coin Shop Countdown

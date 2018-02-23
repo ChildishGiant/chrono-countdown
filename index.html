@@ -1,27 +1,42 @@
-<html>
-  <head>
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
     <meta charset="utf-8">
-    <title>chrono-countdown</title>
+    <meta name="viewport" content="width=device-width">
+    <title>Chrono Countdown</title>
 
-    <!-- SEO -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta name="description" content="">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="styles.css" type="text/css" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+</head>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="compiled/style.min.css">
-    <script src="compiled/jssource.min.js"></script>
-
-
-
-  </head>
-  <body>
-    <div id="okok">
-      <a onclick="document.getElementById('emcl').style.display = 'block';" id="frst">Approximately</a>
-      <div id="dusty"></div>
-      until new games are released
+<body>
+    <div id="centerDiv" role="main">
+        <div id="content">
+            <div id="roughlyDiv" onclick="toggleImage(true)">Roughly</div>
+            <br />
+            <br />
+            <div id="timeDiv"></div>
+            <div id="restDiv">until the coin shop is re-stocked.</div>
+            <br />
+            <div id="actualTime"></div>
+            <br />
+            <span id="coinShopLink"><a href="https://www.chrono.gg/shop?ref=https://goo.gl/22Dqzz" title="Shop at Chrono!">Get shoppin!</a></span>
+        </div>
     </div>
-    <div id="emcl" onclick="document.getElementById('emcl').style.display = 'none';">
-      <img src="pandaego.png"/>
+
+    <div id="quoteDiv" onclick="toggleImage(false)">
+        <img id="quoteImg" src="quote.png" />
     </div>
-  </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment-with-locales.min.js"></script>
+    <script src="konamicode.js"></script>
+    <script src="script.js"></script>
+</body>
 </html>
+
+<!-- Some unoriginal jerk made this. Based off a work by ChildishGiant https://childishgiant.github.io/chrono-countdown/ -->
+<!-- Also try the Konami Code -->
+<!-- https://www.youtube.com/watch?v=WUWQFnC2zqU -->
