@@ -1,2 +1,2 @@
-# chrono-countdown
-Apparently I do this now
+# Unofficial Chrono Countdown
+Get Hubb? What is this?
