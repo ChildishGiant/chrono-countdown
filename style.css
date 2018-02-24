@@ -9,19 +9,25 @@ html {
 body {
   margin: 0;
   background: url("../background.svg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #okok {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   font-size: 2em;
+  max-width: 80%;
 }
 
-@media all and (max-width:23.75em), all and (max-height:29.0625em) {
+@media all and (max-height:500px) {
   #okok {
-    font-size: 10vmin;
+    font-size: 7vmin;
+  }
+}
+
+@media all and (max-width:700px) {
+  #okok {
+    font-size: 5vmin;
   }
 }
 
@@ -51,13 +57,21 @@ a:hover {
   left: 0;
   display: none;
   cursor: pointer;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
 }
 
 #emcl img {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  text-align: center;
+  padding-bottom: .5em;
 }

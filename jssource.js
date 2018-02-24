@@ -1,13 +1,5 @@
 var rollingChronoShopDate;
 
-function toggleImage(willShow) {
-    if (willShow) {
-        document.getElementById("quoteDiv").style.display = "block";
-    } else {
-        document.getElementById("quoteDiv").style.display = "none";
-    }
-}
-
 function refreshData() {
     var currentUtcDateTime = moment.utc();
     rollingChronoShopDate = moment.utc("2017-03-10T17:00:00Z");
