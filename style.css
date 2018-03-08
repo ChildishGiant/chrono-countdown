@@ -12,6 +12,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 }
 
 #okok {
@@ -74,4 +75,5 @@ footer {
   position: absolute;
   text-align: center;
   padding-bottom: .5em;
+  font-size: 3vmin;
 }
