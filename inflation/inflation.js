@@ -113,7 +113,19 @@ request.onload = function () {
 
 
 			// Configuration options go here
-			options: {}
+			options: {
+				scales: {
+					yAxes: [
+						{
+							scaleLabel: {
+								display: true,
+								labelString: 'Price (coins)',
+								fontFamily: 'Comic Sans MS'
+							}
+						}		
+					]
+				}			
+			}
 		});
 
 
