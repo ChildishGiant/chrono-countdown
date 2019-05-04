@@ -29,7 +29,7 @@ function movingAvg(array, count, qualifier) {
 	var result = []; var val;
 
 	// pad beginning of result with null values
-	for (var i = 0; i < count - 1; i++) { result.push(null); }
+	for (var i = 0; i < count - 1; i++) { result.push(null);}
 
 	// calculate average for each subarray and add to result
 	for (var i = 0, len = array.length - count; i <= len; i++) {
@@ -37,6 +37,11 @@ function movingAvg(array, count, qualifier) {
 		val = avg(array.slice(i, i + count), qualifier);
 		if (isNaN(val)) { result.push(null); } else { result.push(val); }
 	}
+
+	// Take off half the nulls from the front and put them to the back
+	// result.slice(Math.round(count / 2));
+
+
 
 	return result;
 }
@@ -74,7 +79,7 @@ request.onload = function () {
 						borderColor: "#452e59",
 						data: movingAvg(
 							sortedByDate.map(x => { return x.price; }),
-							5
+							Number(document.getElementById("ao").value)
 						),
 						trendlineLinear: {
 							style: "#452e59",
@@ -123,9 +128,9 @@ request.onload = function () {
 								fontFamily: "'Open Sans', sans-serif",
 								fontSize: "15"
 							}
-						}		
+						}
 					]
-				}			
+				}
 			}
 		});
 
@@ -144,3 +149,23 @@ request.send();
 // TODO:
 //
 // https://stackoverflow.com/questions/17354163/dynamically-update-values-of-a-chartjs-chart
+
+
+function updateAO() {
+
+	// Update one of the points in the second dataset
+
+	let input = Number(document.getElementById("ao").value);
+
+	// If it's a sensible input
+	if (input >= 2 && input < sortedByDate.length && input % 1 === 0) {
+
+		chart.data.datasets[0].label = `Price ao${input}`;
+		chart.data.datasets[0].data = movingAvg(sortedByDate.map(x => { return x.price; }), input);
+
+	}
+
+
+
+	chart.update();
+}
