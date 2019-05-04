@@ -119,8 +119,9 @@ request.onload = function () {
 						{
 							scaleLabel: {
 								display: true,
-								labelString: 'Price (coins)',
-								fontFamily: 'Comic Sans MS'
+								labelString: "Price (coins)",
+								fontFamily: "'Open Sans', sans-serif",
+								fontSize: "15"
 							}
 						}		
 					]
