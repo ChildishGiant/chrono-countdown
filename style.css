@@ -62,6 +62,7 @@ a:hover {
   justify-content: center;
   align-items: center;
   user-select: none;
+  z-index: 1;
 }
 
 #emcl img {
